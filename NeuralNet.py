@@ -146,11 +146,11 @@ def recallSpam(actual, pred):
 # instantiate model
 gridSearchDF = pd.DataFrame(columns=['Epoch', 'Neurons', 'batch size', 'learning rate', 'accuracy', 'Ham precision', 'Ham recall', 'Spam precision', 'Spam recall'])
 
-for nn in range(50,150,20):#500
+for nn in range(50,151,50):#500
     print("Neurons: ", nn)
-    for bat in range(1,52,10):
-        for ep in range(5, 6, 10):
-            lrs = [1,0.1,0.01, 0.001]
+    for bat in range(50,301,50):
+        for ep in range(5, 51, 15):
+            lrs = [1,0.1,0.01]
             for lrate in lrs:
                 model = Sequential([
                     Dense(nn, activation='relu', input_shape=(23,)),
