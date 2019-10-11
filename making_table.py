@@ -63,9 +63,8 @@ for f in range(1,6):
                 file.close()
 
 
-
     if f==1:
-        en1=data
+        en1 = data
 
     elif f==2:
         en2=data
@@ -215,6 +214,7 @@ def sentence_split(text, properties={'annotators': 'ssplit', 'outputFormat': 'js
         print(annotated)
     return sentence_split
 
+
 def AddPolarityFeature(DF):
     sentiment = pd.DataFrame(columns = ['label','message','polarity',"body_len","punctuation%"])
 
@@ -260,22 +260,17 @@ def AddPolarityFeature(DF):
 TrainSet=AddPolarityFeature(TrainSet)
 TestSet=AddPolarityFeature(TestSet)
 
-posPolHam=0
-posPolSpam=0
-
-negPolHam=0
-negPolSpam=0
-
-neuPolHam=0
-neuPolSpam=0
-
 #################################################################################################################
 
-xTrain=TrainSet[['message','polarity',"body_len","punctuation%"]].reset_index().drop(columns=['index'])
-xTest=TestSet[['message','polarity',"body_len","punctuation%"]].reset_index().drop(columns=['index'])
+TrainSet.to_csv('T1/Training.csv')
 
-yTrain=TrainSet['label'].reset_index().drop(columns=['index'])
-yTest=TrainSet['label'].reset_index().drop(columns=['index'])
+TestSet.to_csv('T1/Testing.csv')
+
+# xTrain = TrainSet[['message','polarity',"body_len","punctuation%"]].reset_index().drop(columns=['index'])
+# xTest = TestSet[['message','polarity',"body_len","punctuation%"]].reset_index().drop(columns=['index'])
+#
+# yTrain=TrainSet['label'].reset_index().drop(columns=['index'])
+# yTest=TrainSet['label'].reset_index().drop(columns=['index'])
 
 
 
