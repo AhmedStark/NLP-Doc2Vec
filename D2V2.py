@@ -6,6 +6,9 @@ TrainData = TrainData.drop([0]).reset_index(drop=True)
 TestData = pd.read_csv("T2/Testing.csv").drop(columns=["Unnamed: 0"])
 TestData = TestData.drop([0]).reset_index(drop=True)
 
+TrainData = TrainData.sample(frac=1).reset_index(drop=True)
+TestData = TestData.sample(frac=1).reset_index(drop=True)
+
 #Import all the dependencies
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from nltk.tokenize import word_tokenize

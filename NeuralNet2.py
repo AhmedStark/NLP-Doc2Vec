@@ -8,6 +8,7 @@ import pandas as pd
 TrainData = pd.read_csv("/home/ahmed/Desktop/python/Assignment2/T2/TrainingD2V.csv").drop(columns=["Unnamed: 0"])
 TestData = pd.read_csv("/home/ahmed/Desktop/python/Assignment2/T2/TestingD2V.csv").drop(columns=["Unnamed: 0"])
 
+
 xTrain = TrainData[['polarity', "body_len", "punctuation%", "x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10", "x11", "x12", "x13", "x14", "x15", "x16", "x17", "x18", "x19", "x20"]].reset_index(drop=True)
 xTest = TestData[['polarity',"body_len","punctuation%", "x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10", "x11", "x12", "x13", "x14", "x15", "x16", "x17", "x18", "x19", "x20"]].reset_index(drop=True)
 

@@ -4,11 +4,6 @@
 import nltk
 import pandas as pd
 import re
-from sklearn.feature_extraction.text import TfidfVectorizer
-import string
-import os
-from sklearn.model_selection import train_test_split
-import timeit
 import numpy as np
 import spacy
 from pycorenlp import StanfordCoreNLP
@@ -19,7 +14,6 @@ import timeit
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 analyser = SentimentIntensityAnalyzer()
 
-start = timeit.default_timer()
 
 # Initialize spacy 'en' model, keeping only tagger component needed for lemmatization
 sp = spacy.load('en', disable=['parser', 'ner'])
@@ -266,44 +260,4 @@ TrainSet.to_csv('T1/Training.csv')
 
 TestSet.to_csv('T1/Testing.csv')
 
-# xTrain = TrainSet[['message','polarity',"body_len","punctuation%"]].reset_index().drop(columns=['index'])
-# xTest = TestSet[['message','polarity',"body_len","punctuation%"]].reset_index().drop(columns=['index'])
-#
-# yTrain=TrainSet['label'].reset_index().drop(columns=['index'])
-# yTest=TrainSet['label'].reset_index().drop(columns=['index'])
-
-
-
-#
-# tfidf_vect = TfidfVectorizer(analyzer=clean_text,max_features=1500)
-# tfidf_vect_fit = tfidf_vect.fit(xTrain['message'])
-#
-# mm=0
-# import sys
-# print(sys.getsizeof(xTrain))
-# test=[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000,16000,17000,18000,19000,20000, 21000, 22000,23103]
-# trainAll=pd.DataFrame()
-# import sys
-# totS=0
-# for b in test:
-#     xTrain1=xTrain[mm:b]
-#     mm=b
-#
-#     tfidf_train = tfidf_vect_fit.transform(xTrain1['message'])
-#
-#
-#
-#
-#     TrainArr=tfidf_train.toarray()
-#
-#     TrainFrame=pd.DataFrame(TrainArr)
-#
-#     lenAndPunct = xTrain1[['body_len', 'punctuation%']].reset_index(drop=True)
-#     X_train_vect = pd.concat([lenAndPunct, TrainFrame], axis=1)
-#     totS+=sys.getsizeof(X_train_vect)
-    # ff=os.path.join('/home/ahmed/Desktop/python/Assignment2/CSV/', 'csv'+str(b) + ".csv")
-    # X_train_vect.to_csv(ff)
-
-
-    # print(b)
 

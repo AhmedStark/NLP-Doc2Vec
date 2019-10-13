@@ -5,7 +5,6 @@ names = PCA.columns.to_list()
 names.remove("Unnamed: 0")
 
 PickNo = 0.4
-# names=['Prin1', 'Prin2', 'Prin3', 'Prin4', 'Prin5', 'Prin6', 'Prin7', 'Prin8', 'Prin9', 'Prin10', 'Prin11', 'Prin12', 'Prin13', 'Prin14', 'Prin15', 'Prin16', 'Prin17', 'Prin18', 'Prin19','Prin20','Prin21','Prin22']
 features = []
 for i in names:
 

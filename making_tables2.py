@@ -4,22 +4,14 @@
 import nltk
 import pandas as pd
 import re
-from sklearn.feature_extraction.text import TfidfVectorizer
-import string
-import os
-from sklearn.model_selection import train_test_split
-import timeit
-import numpy as np
 import spacy
 from pycorenlp import StanfordCoreNLP
-
 import string
 import os
-import timeit
+
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 analyser = SentimentIntensityAnalyzer()
 
-start = timeit.default_timer()
 
 # Initialize spacy 'en' model, keeping only tagger component needed for lemmatization
 sp = spacy.load('en', disable=['parser', 'ner'])
