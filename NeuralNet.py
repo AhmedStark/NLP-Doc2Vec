@@ -22,6 +22,8 @@ def convertClassesToNums(ylist):
         else:
             result.append([0,1])
     return result
+
+
 train_y = np.array(convertClassesToNums(train_y))
 test_y = np.array(convertClassesToNums(test_y))
 ######################################################################################################################
@@ -146,10 +148,10 @@ def recallSpam(actual, pred):
 # instantiate model
 gridSearchDF = pd.DataFrame(columns=['Epoch', 'Neurons', 'batch size', 'learning rate', 'accuracy', 'Ham precision', 'Ham recall', 'Spam precision', 'Spam recall'])
 
-for nn in range(50,151,50):#500
+for nn in range(50,151,25):#500
     print("Neurons: ", nn)
-    for bat in range(50,301,50):
-        for ep in range(5, 51, 15):
+    for bat in range(1,52,10):
+        for ep in range(5, 46, 10):
             lrs = [1,0.1,0.01]
             for lrate in lrs:
                 model = Sequential([
