@@ -38,52 +38,6 @@ xTrain=standerdize(xTrain)
 
 xTest=standerdize(xTest)
 
-
-######################################################################################################################
-from sklearn import preprocessing
-# # Get column names first
-# # Create the Scaler object
-# scaler = preprocessing.StandardScaler()
-# # Fit your data on the scaler object
-# xTrain = scaler.fit_transform(xTrain)
-# xTrain = pd.DataFrame(xTrain, columns=names)
-#
-# names = xTest.columns
-# # Create the Scaler object
-# scaler = preprocessing.StandardScaler()
-# # Fit your data on the scaler object
-# xTest = scaler.fit_transform(xTest)
-# xTest = pd.DataFrame(xTest, columns=names)
-# print("Standardisation results:")
-#
-# from sklearn.naive_bayes import GaussianNB
-# clf = GaussianNB()
-# clf.fit(xTrain, yTrain)
-#
-# print(clf.predict(xTest))
-#
-# print(clf.score(xTest, yTest))
-#
-# from sklearn.metrics import classification_report
-#
-# print(classification_report(yTest, clf.predict(xTest)))
-#####################################################################################################################
-# normalise
-
-# names = xTrain.columns
-# x = xTrain.values #returns a numpy array
-# min_max_scaler = preprocessing.MinMaxScaler()
-# x_scaled = min_max_scaler.fit_transform(x)
-# xTrain = pd.DataFrame(x_scaled, columns=names)
-#
-#
-#
-# names = xTest.columns
-# x = xTest.values #returns a numpy array
-# min_max_scaler = preprocessing.MinMaxScaler()
-# x_scaled = min_max_scaler.fit_transform(x)
-# xTest = pd.DataFrame(x_scaled, columns=names)
-
 #################################################################################################################
 
 # xTrain = xTrain[['x18', 'x4', 'punctuation%', 'x20', 'x8', 'x11', 'x7', 'polarity', 'body_len', 'x15', 'x17', 'x19', 'x1', 'x3', 'x6', 'x5', 'x12', 'x16']]
